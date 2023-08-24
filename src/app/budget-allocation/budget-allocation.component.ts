@@ -5,7 +5,6 @@ import { ConstantsService } from '../services/constants/constants.service';
 import { CommonService } from '../services/common/common.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import Swal from 'sweetalert2';
-import { KeycloakService } from 'keycloak-angular';
 import { UploadDocuments } from '../model/upload-documents';
 
 import {
@@ -337,7 +336,6 @@ export class BudgetAllocationComponent implements OnInit {
     private apiService: ApiCallingServiceService,
     private formBuilder: FormBuilder,
     private common: CommonService,
-    private keycloakService: KeycloakService
   ) {}
 
   token: any;

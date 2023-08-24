@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { KeycloakService } from 'keycloak-angular';
+// import { KeycloakService } from 'keycloak-angular';
 
 import * as $ from 'jquery';
 import { ApiCallingServiceService } from '../services/api-calling/api-calling-service.service';

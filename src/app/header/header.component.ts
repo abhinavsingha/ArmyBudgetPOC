@@ -8,8 +8,6 @@ import { Injectable, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { CommonService } from '../services/common/common.service';
 import Swal from 'sweetalert2';
-
-import { KeycloakService } from 'keycloak-angular';
 import { SharedService } from '../services/shared/shared.service';
 import * as FileSaver from 'file-saver';
 import { HttpClient } from '@angular/common/http';
@@ -49,7 +47,6 @@ export class HeaderComponent {
     private apiService: ApiCallingServiceService,
     private formBuilder: FormBuilder,
     private common: CommonService,
-    private keycloakService: KeycloakService,
     private sharedService: SharedService,
     private router: Router
   ) {}
@@ -139,7 +136,6 @@ export class HeaderComponent {
     localStorage.removeItem('userCurrentUnitName');
     localStorage.removeItem('token');
     localStorage.removeItem('cgwwaUserDetails');
-    this.keycloakService.logout();
   }
 
   confirmModelForLogout(data: any) {
@@ -160,7 +156,6 @@ export class HeaderComponent {
 
   finallyLogout() {
     localStorage.removeItem('token');
-    this.keycloakService.logout();
   }
 
   getDashBoardDta() {
