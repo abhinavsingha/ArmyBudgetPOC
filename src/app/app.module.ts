@@ -158,16 +158,16 @@ function initializeKeycloak(keycloak: KeycloakService) {
     SearchPipePipe,
     SearchPipeRecieptPipe,
     SearchUserPipePipe,
-    {
-      provide: APP_INITIALIZER,
-      useFactory: initializeKeycloak,
-      multi: true,
-      deps: [KeycloakService],
-    },
-    {
-      provide: LocationStrategy,
-      useClass: HashLocationStrategy,
-    },
+    // {
+    //   provide: APP_INITIALIZER,
+    //   useFactory: initializeKeycloak,
+    //   multi: true,
+    //   deps: [KeycloakService],
+    // },
+    // {
+    //   provide: LocationStrategy,
+    //   useClass: HashLocationStrategy,
+    // },
   ],
   bootstrap: [AppComponent],
 })

@@ -33,7 +33,7 @@ const routes: Routes = [
   // { path: '', component: LoginComponent },
   // { path: '', component: DashboardComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: '', component: DashboardComponent },
+  { path: '', component: LoginComponent },
   { path: 'budget-allocation', component: BudgetAllocationComponent },
   { path: 'budget-update', component: BudgetUpdateComponent },
   { path: 'budget-delete', component: BudgetDeleteComponent },

@@ -8,10 +8,11 @@ export class ConstantsService {
 
   serverRedirectUrl = 'https://icg.net.in/auth/realms/icgrms/protocol/openid-connect/logout?redirect_uri=https://icg.net.in/'; //For Production Server
   // serviceUrl = 'https://icg.net.in/budget/'; //prod server
-  serviceUrl = 'https://icg.net.in/cgbudget/'; //UAT server
+  // serviceUrl = 'https://icg.net.in/cgbudget/'; //UAT server
   // serviceUrl = 'http://172.20.10.05:1111/';
   // serviceUrl = 'http://192.168.43.153:1111/';
   //  serviceUrl = 'http://:1111/';
+  serviceUrl = 'http://192.168.100.122:1111/';
   api = {
     getDataBudgetAllocation:
       this.serviceUrl + 'budgetAllocation/getDataBudgetAllocation',
@@ -255,7 +256,8 @@ export class ConstantsService {
     updateMsgStatusMain: this.serviceUrl+'inboxOutbox/updateMsgStatusMain',
     getOldCdaDataForRebase: this.serviceUrl+'cdaParkingController/getOldCdaDataForRebase',
     getAllSubHeadList: this.serviceUrl+'budgetAllocation/getAllSubHeadList',
-    getIsShipCgUnit: this.serviceUrl+'unitRebaseController/getIsShipCgUnit'
+    getIsShipCgUnit: this.serviceUrl+'unitRebaseController/getIsShipCgUnit',
+    loginWebApi: this.serviceUrl+'/user/loginWebApi'
 
 
   };
