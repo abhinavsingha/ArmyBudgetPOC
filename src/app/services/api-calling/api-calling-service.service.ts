@@ -10,10 +10,20 @@ export class ApiCallingServiceService {
   constructor(private http: HttpClient) {}
 
   postApi(url: any, jsonPayload: any) {
-    return this.http.post(url, jsonPayload).pipe(
-      map((results) => results),
-      catchError(this.handleError)
-    );
+    if(this.token!=null){
+      const headers = new HttpHeaders({
+        'Authorization': this.token
+      });
+      return this.http.post(url, jsonPayload,{headers}).pipe(
+        map((results) => results),
+        catchError(this.handleError)
+      );
+    }
+    else{
+      return this.http.post(url, jsonPayload).pipe(
+        map((results) => results),
+        catchError(this.handleError));
+    }
   }
 
   newpostApi(url: any, jsonPayload: any): Observable<Object> {
@@ -23,12 +33,23 @@ export class ApiCallingServiceService {
       catchError(this.handleError)
     );
   }
-
+  private token=localStorage.getItem('token');
   getApi(url: any) {
-    return this.http.get(url).pipe(
-      map((results) => results),
-      catchError(this.handleError)
-    );
+    if(this.token!=null){
+      const headers = new HttpHeaders({
+        'Authorization': this.token
+      });
+      return this.http.get(url, { headers }).pipe(
+        map((results) => results),
+        catchError(this.handleError)
+      );
+    }
+    else{
+      return this.http.get(url).pipe(
+        map((results) => results),
+        catchError(this.handleError)
+      );;
+    }
   }
 
   // getToeknApi(url: any, token: any) {

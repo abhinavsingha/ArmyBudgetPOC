@@ -1,6 +1,6 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+// import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 // import { MatTableModule } from '@angular/material/table';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -75,23 +75,23 @@ import {ApprovedRebaseComponent} from "./approved-rebase/approved-rebase.compone
 //     });
 // }
 
-function initializeKeycloak(keycloak: KeycloakService) {
-  return () =>
-    keycloak.init({
-      config: {
-        // url: 'http://localhost:8080/auth',
-        url: 'https://icg.net.in/auth/',
-        realm: 'icgrms',
-        clientId: 'cgbudget', // For Production and Diwakar Local PC
-        // clientId: 'budget', // For UAT Server
-      },
-      initOptions: {
-        onLoad: 'login-required',
-        flow: 'standard',
-        checkLoginIframe: false,
-      },
-    });
-}
+// function initializeKeycloak(keycloak: KeycloakService) {
+//   return () =>
+//     keycloak.init({
+//       config: {
+//         // url: 'http://localhost:8080/auth',
+//         url: 'https://icg.net.in/auth/',
+//         realm: 'icgrms',
+//         clientId: 'cgbudget', // For Production and Diwakar Local PC
+//         // clientId: 'budget', // For UAT Server
+//       },
+//       initOptions: {
+//         onLoad: 'login-required',
+//         flow: 'standard',
+//         checkLoginIframe: false,
+//       },
+//     });
+// }
 
 @NgModule({
   declarations: [
@@ -143,7 +143,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
     NgxSpinnerModule,
     NgxPaginationModule,
     BrowserAnimationsModule,
-    KeycloakAngularModule,
+    // KeycloakAngularModule,
     NgxExtendedPdfViewerModule,
     // MatIconModule,
     // MatFormFieldModule,

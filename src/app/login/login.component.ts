@@ -40,6 +40,9 @@ login(){
       let result: { [key: string]: any } = v;
 
       if (result['message'] == 'success') {
+        debugger;
+        localStorage.setItem('token',result['response'].setToken);
+        this.router.navigate(['/dashboard']);
         } else {
         this.common.faliureAlert('Please try later', result['message'], '');
         this.SpinnerService.hide();

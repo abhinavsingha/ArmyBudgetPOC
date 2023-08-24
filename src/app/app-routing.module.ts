@@ -27,11 +27,8 @@ import { ArchiveComponent } from './archive/archive.component';
 import { AllAllocationComponent } from './all-allocation/all-allocation.component';
 import { UnitRebaseReportComponent } from './unit-rebase-report/unit-rebase-report.component';
 import {ApprovedRebaseComponent} from "./approved-rebase/approved-rebase.component";
-// import {ViewFormComponent} from "./view-form/view-form.component";
 
 const routes: Routes = [
-  // { path: '', component: LoginComponent },
-  // { path: '', component: DashboardComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: '', component: LoginComponent },
   { path: 'budget-allocation', component: BudgetAllocationComponent },
@@ -71,10 +68,6 @@ const routes: Routes = [
     path: 'cda-parking',
     component: CdaParkingComponent,
   },
-  // {
-  //   path: '',
-  //   component: RecieptComponent,
-  // },
   {
     path: 'reciept',
     component: RecieptComponent,
@@ -90,7 +83,6 @@ const routes: Routes = [
   { path: 'all-allocation', component: AllAllocationComponent },
   { path: 'archive', component: ArchiveComponent },
   { path: 'unit-rebase-report', component: UnitRebaseReportComponent },
-  // { path: 'view-form', component: ViewFormComponent },
 ];
 
 @NgModule({

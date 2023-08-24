@@ -51,7 +51,7 @@ export class SidebarComponent {
 
   constructor(
     public sharedService: SharedService,
-    private keycloakService: KeycloakService,
+    // private keycloakService: KeycloakService,
     private SpinnerService: NgxSpinnerService,
     private cons: ConstantsService,
     private apiService: ApiCallingServiceService,
@@ -86,7 +86,7 @@ export class SidebarComponent {
   logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('cgwwaUserDetails');
-    this.keycloakService.logout();
+    // this.keycloakService.logout();
   }
 
   unitId: any;
