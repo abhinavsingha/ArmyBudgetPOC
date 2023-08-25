@@ -87,7 +87,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     // ngOnInit(): void {
-
+this.draw();
     this.userExit();
 
     $.getScript('assets/main.js');
@@ -434,34 +434,34 @@ export class DashboardComponent implements OnInit {
   }
 
   draw(): void {
-    // Chart.register(...registerables);
-    //     const data = {
-    //       labels: ['OE','SM','WS','OT','DT','RT','PU','PL','AP','MW', 'PS', 'ME', 'IT'],
-    //       datasets: [{
-    //         label: 'Expenditure(Lakhs)',
-    //         backgroundColor: 'rgba(60,141,188,0.9)',
-    //         borderColor: 'rgba(60,141,188,0.8)',
-    //         pointRadius: false,
-    //         pointColor: '#3b8bba',
-    //         pointStrokeColor: 'rgba(60,141,188,1)',
-    //         pointHighlightFill: '#fff',
-    //         pointHighlightStroke: 'rgba(60,141,188,1)',
-    //         data: [58, 68, 40, 59, 86, 67, 90, 70, 75, 70, 80, 55, 66]
-    //       },
-    //     {
-    //       label: 'Allocated(Lakhs)',
-    //       backgroundColor: 'rgba(210, 214, 222, 1)',
-    //       borderColor: 'rgba(210, 214, 222, 1)',
-    //       pointRadius: false,
-    //       pointColor: 'rgba(210, 214, 222, 1)',
-    //       pointStrokeColor: '#c1c7d1',
-    //       pointHighlightFill: '#fff',
-    //       pointHighlightStroke: 'rgba(220,220,220,1)',
-    //       data: [58, 45, 50, 39, 46, 57, 60, 50, 65, 60, 60, 35, 46]
-    //
-    //     }
-    //     ]
-    // };
+    Chart.register(...registerables);
+        const data = {
+          labels: ['OE','SM','WS','OT','DT','RT','PU','PL','AP','MW', 'PS', 'ME', 'IT'],
+          datasets: [{
+            label: 'Expenditure(Lakhs)',
+            backgroundColor: 'rgba(60,141,188,0.9)',
+            borderColor: 'rgba(60,141,188,0.8)',
+            pointRadius: false,
+            pointColor: '#3b8bba',
+            pointStrokeColor: 'rgba(60,141,188,1)',
+            pointHighlightFill: '#fff',
+            pointHighlightStroke: 'rgba(60,141,188,1)',
+            data: [58, 68, 40, 59, 86, 67, 90, 70, 75, 70, 80, 55, 66]
+          },
+        {
+          label: 'Allocated(Lakhs)',
+          backgroundColor: 'rgba(210, 214, 222, 1)',
+          borderColor: 'rgba(210, 214, 222, 1)',
+          pointRadius: false,
+          pointColor: 'rgba(210, 214, 222, 1)',
+          pointStrokeColor: '#c1c7d1',
+          pointHighlightFill: '#fff',
+          pointHighlightStroke: 'rgba(220,220,220,1)',
+          data: [58, 45, 50, 39, 46, 57, 60, 50, 65, 60, 60, 35, 46]
+    
+        }
+        ]
+    };
     // const data = {
     //   labels: this.dasboardData.subHeadWiseExpenditure.subhead,
     //   datasets: [
@@ -489,56 +489,56 @@ export class DashboardComponent implements OnInit {
     //     },
     //   ],
     // };
-    // const options = {
-    //   maintainAspectRatio: false,
-    //   responsive: true,
-    //   legend: {
-    //     display: false,
-    //   },
-    //   scales: {
-    //     y: {
-    //       beginAtZero: true,
-    //       display: true,
-    //     },
-    //   },
-    // };
-    // const config: ChartConfiguration = {
-    //   type: 'bar',
-    //   data: data,
-    //   options: options,
-    // };
-    // const chartItem: ChartItem = document.getElementById(
-    //   'my-chart'
-    // ) as ChartItem;
-    // new Chart(chartItem, config);
-    //
-    // // const data2 = {
-    // //   labels: ['CGHQ','RHQ(W)','RHQ(NW)','RHQ(NE)','RHQ(E)','RHQ(A&N)'],
-    // //   datasets: [{
-    // //     label: 'Expenditure(Lakhs)',
-    // //     backgroundColor: 'rgba(60,141,188,0.9)',
-    // //     borderColor: 'rgba(60,141,188,0.8)',
-    // //     pointRadius: false,
-    // //     pointColor: '#3b8bba',
-    // //     pointStrokeColor: 'rgba(60,141,188,1)',
-    // //     pointHighlightFill: '#fff',
-    // //     pointHighlightStroke: 'rgba(60,141,188,1)',
-    // //     data: [58, 68, 40, 59, 86, 67]
-    // //   },
-    // // {
-    // //   label: 'Allocated(Lakhs)',
-    // //   backgroundColor: 'rgba(210, 214, 222, 1)',
-    // //   borderColor: 'rgba(210, 214, 222, 1)',
-    // //   pointRadius: false,
-    // //   pointColor: 'rgba(210, 214, 222, 1)',
-    // //   pointStrokeColor: '#c1c7d1',
-    // //   pointHighlightFill: '#fff',
-    // //   pointHighlightStroke: 'rgba(220,220,220,1)',
-    // //   data: [38, 45, 50, 39, 46, 57]
-    // //
-    // // }
-    // // ]
-    // // };
+    const options = {
+      maintainAspectRatio: false,
+      responsive: true,
+      legend: {
+        display: false,
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          display: true,
+        },
+      },
+    };
+    const config: ChartConfiguration = {
+      type: 'bar',
+      data: data,
+      options: options,
+    };
+    const chartItem: ChartItem = document.getElementById(
+      'my-chart'
+    ) as ChartItem;
+    new Chart(chartItem, config);
+    
+    const data2 = {
+      labels: ['CGHQ','RHQ(W)','RHQ(NW)','RHQ(NE)','RHQ(E)','RHQ(A&N)'],
+      datasets: [{
+        label: 'Expenditure(Lakhs)',
+        backgroundColor: 'rgba(60,141,188,0.9)',
+        borderColor: 'rgba(60,141,188,0.8)',
+        pointRadius: false,
+        pointColor: '#3b8bba',
+        pointStrokeColor: 'rgba(60,141,188,1)',
+        pointHighlightFill: '#fff',
+        pointHighlightStroke: 'rgba(60,141,188,1)',
+        data: [58, 68, 40, 59, 86, 67]
+      },
+    {
+      label: 'Allocated(Lakhs)',
+      backgroundColor: 'rgba(210, 214, 222, 1)',
+      borderColor: 'rgba(210, 214, 222, 1)',
+      pointRadius: false,
+      pointColor: 'rgba(210, 214, 222, 1)',
+      pointStrokeColor: '#c1c7d1',
+      pointHighlightFill: '#fff',
+      pointHighlightStroke: 'rgba(220,220,220,1)',
+      data: [38, 45, 50, 39, 46, 57]
+    
+    }
+    ]
+    };
     // const data2 = {
     //   labels: this.dasboardData.unitWiseExpenditure.unitWise,
     //   datasets: [
@@ -566,29 +566,29 @@ export class DashboardComponent implements OnInit {
     //     },
     //   ],
     // };
-    // const options2 = {
-    //   maintainAspectRatio: false,
-    //   responsive: true,
-    //   legend: {
-    //     display: false,
-    //   },
-    //   scales: {
-    //     y: {
-    //       beginAtZero: true,
-    //       display: true,
-    //     },
-    //   },
-    // };
-    // const config2: ChartConfiguration = {
-    //   type: 'bar',
-    //   data: data2,
-    //   options: options2,
-    // };
-    //
-    // const chartItem2: ChartItem = document.getElementById(
-    //   'my-chart2'
-    // ) as ChartItem;
-    // new Chart(chartItem2, config2);
+    const options2 = {
+      maintainAspectRatio: false,
+      responsive: true,
+      legend: {
+        display: false,
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          display: true,
+        },
+      },
+    };
+    const config2: ChartConfiguration = {
+      type: 'bar',
+      data: data2,
+      options: options2,
+    };
+    
+    const chartItem2: ChartItem = document.getElementById(
+      'my-chart2'
+    ) as ChartItem;
+    new Chart(chartItem2, config2);
   }
 
   confirmRedirectModel() {
