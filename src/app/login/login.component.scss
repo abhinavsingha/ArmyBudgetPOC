@@ -1,3 +1,39 @@
 .wrapper{
 background: #ffffff !important;
 }
+.page-body-wrapper{
+    width: 100%;
+}
+#myVideo {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+    z-index:0;
+    opacity: .7;
+  }
+  .card{
+    z-index:1;
+    background-color: #9d939340 !important;
+  }
+  .login-card-body, .register-card-body{
+    border-radius: 8px;
+    background-color: #ffffff2b !important;
+  }
+  .login-card-body .input-group .input-group-text, .register-card-body .input-group .input-group-text{
+color:#ffffff !important;
+  }
+  .login-box-msg{
+    color: #ffffff !important;
+    font-weight: 500 !important;
+  }
+  .icheck-primary label, .forgot a{
+    color: #ffffff !important;
+  }
+  .login-page, .register-page {
+    background-color: #434343 !important;
+  }
