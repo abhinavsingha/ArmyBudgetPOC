@@ -1,8 +1,5 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-// import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
-// import { MatTableModule } from '@angular/material/table';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -158,6 +155,7 @@ import {ApprovedRebaseComponent} from "./approved-rebase/approved-rebase.compone
     SearchPipePipe,
     SearchPipeRecieptPipe,
     SearchUserPipePipe,
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
     // {
     //   provide: APP_INITIALIZER,
     //   useFactory: initializeKeycloak,
