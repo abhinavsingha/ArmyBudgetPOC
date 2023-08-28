@@ -9,7 +9,7 @@
   <section>
     <router-outlet (activate)="showHideNav($event)"></router-outlet>
   </section>
-  <footer class="main-footer">
+  <footer class="main-footer" *ngIf="isShow">
 
     <strong>Developed and Maintained By <a href="https://intekmicro.com" target="_blank">Intek Micro</a> | Support | Copyrights © 2023 <a href="https://icg.net.in" target="_blank">Indian Coast Guard</a>. </strong>
     All rights reserved.

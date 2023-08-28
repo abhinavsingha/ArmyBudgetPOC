@@ -14,7 +14,7 @@ background: #ffffff !important;
   position: absolute;
   transform: translate(-50%, -50%);
     z-index:0;
-    opacity: .7;
+    opacity: .2;
   }
   .card{
     z-index:1;
@@ -37,3 +37,24 @@ color:#ffffff !important;
   .login-page, .register-page {
     background-color: #434343 !important;
   }
+  .tp-header-brown {
+    background: url('../../assets/img/heder_3.jpg') left top no-repeat;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.logo-army{
+  height: 162px;
+  display: flex;
+    justify-content: space-between;
+    padding: 1rem 0.5rem;
+}
+.banner::after {
+  content: ""; // ::before and ::after both require content
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:rgb(0 0 0 / 30%);
+  opacity: .7;
+}

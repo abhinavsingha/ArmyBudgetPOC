@@ -1,15 +1,40 @@
-<div class="hold-transition login-page">
+<header>
+  <div class="tp-header-brown">
+    <div class="logo-army"></div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand d-md-none d-xl-none" href="/"><img src="/Content/images/logo_light_sm.png" width="30"
+          height="24"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-<div class="login-box">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="example">
+          <li class="nav-item"><a class="nav-link active" href="/login"><i class="fa fa-home"></i></a></li>
+          <li class="nav-item "><a aria-expanded="false" class="nav-link" target="_blank" href="https://indianarmy.nic.in/about/about-us-site-main/organisation-of-indian-army" >About Indian Army</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" target="_blank" href="/https://indianarmy.nic.in/content2/Footer-Links/contact-us-footer-links-site-main">Contact Us</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="hold-transition login-page py-5 banner">
+
+  <div class="login-box">
 
     <!-- /.login-logo -->
     <div class="card">
       <div class="card-body login-card-body">
         <div class="login-logo">
           <a href="#" class="brand-link main-logo">
-              <img src="assets/img/icg_logo.png" alt="icg Logo" class="brand-image" width="100px">
-            </a>
-      </div>
+            <img src="assets/img/icg_logo.png" alt="icg Logo" class="brand-image" width="100px">
+          </a>
+        </div>
         <p class="login-box-msg">Sign in to start your session</p>
 
         <form action="/" method="post" [formGroup]="formData">
@@ -40,7 +65,7 @@
             </div>
             <!-- /.col -->
             <div class="col-4">
-<!--              <button type="submit" class="btn btn-primary btn-block" (click)="login()">Sign In</button>-->
+              <!--              <button type="submit" class="btn btn-primary btn-block" (click)="login()">Sign In</button>-->
               <button type="submit" class="btn btn-primary btn-block" [routerLink]="['/dashboard']">Sign In</button>
             </div>
             <!-- /.col -->
@@ -50,12 +75,14 @@
         <p class="mb-1 forgot">
           <a href="forgot-password.html">I forgot my password</a>
         </p>
-
+        <p class="mb-1 forgot">
+          <b><a>Total Active Users Presently: 00000</a></b>
+        </p>
       </div>
       <!-- /.login-card-body -->
     </div>
-</div>
-<video #myVideo id="myVideo" autoplay loop playsinline muted >
-  <source src="../../assets/img/ARMD.mp4">
-</video>
+  </div>
+  <video #myVideo id="myVideo" autoplay loop playsinline muted>
+    <source src="../../assets/img/ARMD.mp4">
+  </video>
 </div>
