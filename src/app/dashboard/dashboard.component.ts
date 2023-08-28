@@ -439,7 +439,7 @@ this.draw();
           labels: ['OE','SM','WS','OT','DT','RT','PU','PL','AP','MW', 'PS', 'ME', 'IT'],
           datasets: [{
             label: 'Expenditure(Lakhs)',
-            backgroundColor: 'rgba(60,141,188,0.9)',
+            backgroundColor: '#1CC88A',
             borderColor: 'rgba(60,141,188,0.8)',
             pointRadius: false,
             pointColor: '#3b8bba',
@@ -450,7 +450,7 @@ this.draw();
           },
         {
           label: 'Allocated(Lakhs)',
-          backgroundColor: 'rgba(210, 214, 222, 1)',
+          backgroundColor: '#FFBD16',
           borderColor: 'rgba(210, 214, 222, 1)',
           pointRadius: false,
           pointColor: 'rgba(210, 214, 222, 1)',
@@ -516,7 +516,7 @@ this.draw();
       labels: ['CGHQ','RHQ(W)','RHQ(NW)','RHQ(NE)','RHQ(E)','RHQ(A&N)'],
       datasets: [{
         label: 'Expenditure(Lakhs)',
-        backgroundColor: 'rgba(60,141,188,0.9)',
+        backgroundColor: '#1CC88A',
         borderColor: 'rgba(60,141,188,0.8)',
         pointRadius: false,
         pointColor: '#3b8bba',
@@ -527,7 +527,7 @@ this.draw();
       },
     {
       label: 'Allocated(Lakhs)',
-      backgroundColor: 'rgba(210, 214, 222, 1)',
+      backgroundColor: '#FFBD16   ',
       borderColor: 'rgba(210, 214, 222, 1)',
       pointRadius: false,
       pointColor: 'rgba(210, 214, 222, 1)',

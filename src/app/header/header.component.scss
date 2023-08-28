@@ -11,4 +11,13 @@
 }
 .user-panel{
 overflow: visible !important;
+} .banner::after {
+    content: ""; // ::before and ::after both require content
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:rgb(0 0 0 / 30%);
+    opacity: .7;
 }
