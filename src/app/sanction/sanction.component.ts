@@ -27,6 +27,7 @@ export class SanctionComponent implements OnInit {
     uploadFile: new FormControl(),
   });
   formdata = new FormGroup({
+    unit:new FormControl(),
     finYearName:new FormControl(),
     sanctionNumber:new FormControl(),
     sanctionName:new FormControl(),
@@ -46,6 +47,7 @@ export class SanctionComponent implements OnInit {
   private uploadFileDate: any;
   private invoicePath: any;
   finYearData: any;
+  unitData: any;
   constructor(
     public sharedService: SharedService,
     private router: Router,
@@ -62,6 +64,8 @@ export class SanctionComponent implements OnInit {
     $.getScript('assets/js/adminlte.js');
 
     this.getFinancialYear();
+    this.getSOMaster();
+    this.getCgUnitData();
 
   }
 
@@ -194,9 +198,80 @@ export class SanctionComponent implements OnInit {
     });
   }
 
+  getCgUnitData() {
+    this.SpinnerService.show();
+    var comboJson = null;
+    this.apiService.getApi(this.cons.api.getCgUnitData).subscribe(
+      (res) => {
+        this.SpinnerService.hide();
+        let result: { [key: string]: any } = res;
+        this.unitData = result['response'];
+      },
+      (error) => {
+        console.error(error);
+        this.SpinnerService.hide();
+      }
+    );
+  }
 
   submitList(formData:any)
   {
+    let json={
+      finYearId:formData.finYearName.serialNo,
+      sectionNumber:formData.sanctionNumber,
+      sectionName:formData.sanctionName,
+      sectionDate:formData.sanctionDate,
+      sectionTypeId:formData.sanctionType.soId,
+      sectionAmount:formData.sanctionAmount,
+      sectionFirmName:formData.firmName,
+      workOrderNumber:formData.workOrderNo,
+      invoiceNumber:formData.invoiceNo,
+      invoiceDate:formData.invoiceDate,
+      docId:this.invoice,
+      sectionDetails:formData.sanctionDetail,
+      authDetails:formData.sanctionDetail,
+      unitId:formData.unit.unit,
+    };
+    debugger;
+    this.apiService.postApi(this.cons.api.createSO, json).subscribe({
+      next: (v: object) => {
+        this.SpinnerService.hide();
+        let result: { [key: string]: any } = v;
 
+        if (result['message'] == 'success') {
+          this.common.successAlert(
+            'Data Saved',
+            result['response']['msg'],
+            'success'
+          );
+          this.browse = result['response'].uploadDocId;
+          this.uploadFileDate = this.datePipe.transform(
+            new Date(),
+            'yyyy-MM-dd'
+          );
+          // console.log(this.uploadFileDate);
+          this.SpinnerService.hide();
+        } else {
+          this.common.faliureAlert('Please try later', result['message'], '');
+          this.SpinnerService.hide();
+        }
+      },
+      error: (e) => {
+        this.SpinnerService.hide();
+        console.error(e);
+        this.common.faliureAlert('Error', e['error']['message'], 'error');
+      },
+      complete: () => this.SpinnerService.hide(),
+    });
+  }
+  getSOMaster(){
+    this.apiService.getApi(this.cons.api.getSoMaster).subscribe((res) => {
+      let result: { [key: string]: any } = res;
+      if (result['message'] == 'success') {
+        this.sanctionTypes = result['response'];
+      } else {
+        this.common.faliureAlert('Please try later', result['message'], '');
+      }
+    });
   }
 }
