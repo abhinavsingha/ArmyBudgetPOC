@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {ApiCallingServiceService} from "../services/api-calling/api-calling-service.service";
 import {ConstantsService} from "../services/constants/constants.service";
@@ -14,7 +14,8 @@ import {FormControl, FormGroup} from "@angular/forms";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
+
   constructor(
     private http: HttpClient,
     private apiService: ApiCallingServiceService,
@@ -28,6 +29,18 @@ export class LoginComponent {
     username:new FormControl(),
     password:new FormControl()
 });
+
+ngOnInit(): void {
+  $("video").prop('muted', true);
+
+  $("#myVideo").click( function (){
+    if( $("video").prop('muted') ) {
+          $("video").prop('muted', false);
+    } else {
+      $("video").prop('muted', true);
+    }
+  });
+}
 
 login(){
   let json={

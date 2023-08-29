@@ -11213,6 +11213,8 @@ body:not(.layout-fixed) .main-sidebar {
 body:not(.layout-fixed) .main-sidebar .sidebar {
   overflow-y: auto;
   height: 76vh!important;
+  position: relative;
+  z-index: 9;
 }
 .layout-fixed .brand-link {
   width: 250px;
@@ -12189,6 +12191,8 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 [class*="sidebar-dark"] .brand-link,
 [class*="sidebar-dark"] .brand-link .pushmenu {
   color: rgba(255, 255, 255, 0.8);
+  position:relative;
+  z-index: 9;
 }
 [class*="sidebar-dark"] .brand-link .pushmenu:hover,
 [class*="sidebar-dark"] .brand-link:hover {

@@ -58,3 +58,27 @@ color:#ffffff !important;
   background:rgb(0 0 0 / 30%);
   opacity: .7;
 }
+#navbarSupportedContent{
+  justify-content: center;
+}
+.footer ul li a{
+  border-right: 1px solid #ffffff;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+.footer ul li:last-child a{
+  border-right: 1px solid transparent;}
+  .active-user{
+    color: #ffd800;
+
+  }
+  .fwrap{
+    flex-direction: column;
+  }
+  .helpdesk{
+   color: #ffffff;
+  }
+  .helpdesk p, a, label{
+    margin-bottom: 0 !important;
+    font-weight: 500 !important;
+  }
