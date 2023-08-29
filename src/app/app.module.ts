@@ -52,6 +52,7 @@ import {ApprovedRebaseComponent} from "./approved-rebase/approved-rebase.compone
 import {SanctionComponent} from "./sanction/sanction.component";
 import { UnitRegistrationComponent } from './unit-registration/unit-registration.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 // import {ViewFormComponent} from "./view-form/view-form.component";
 
 // import { DialogComponent } from './dialog/dialog.component';
@@ -132,6 +133,7 @@ import { UserRegistrationComponent } from './user-registration/user-registration
     FilterPipe,
     UnitRegistrationComponent,
     UserRegistrationComponent,
+    UserProfileComponent,
 
     // ViewFormComponent
     // DialogComponent,
