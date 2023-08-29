@@ -28,6 +28,7 @@ import { AllAllocationComponent } from './all-allocation/all-allocation.componen
 import { UnitRebaseReportComponent } from './unit-rebase-report/unit-rebase-report.component';
 import {ApprovedRebaseComponent} from "./approved-rebase/approved-rebase.component";
 import {SanctionComponent} from "./sanction/sanction.component";
+import { UnitRegistrationComponent } from './unit-registration/unit-registration.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -40,6 +41,7 @@ const routes: Routes = [
   { path: 'budget-approval', component: BudgetApproverComponent },
   { path: 'new-contigent-bill', component: NewContigentBillComponent },
   { path: 'sanction', component: SanctionComponent },
+  { path: 'unit-registration', component: UnitRegistrationComponent },
   { path: 'manage-users', component: ManageUserComponent },
   { path: 'approved', component: ApprovedComponent },
   {

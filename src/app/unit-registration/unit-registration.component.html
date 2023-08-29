@@ -1,0 +1,122 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Unit Registration</h1>
+          </div>
+          <!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Unit Registration</a></li>
+            </ol>
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title">Unit Registration</h3>
+            <div class="card-tools">
+              <button class="btn btn-tool" data-card-widget="collapse" type="button" >
+                <i class="fas fa-minus"></i>
+              </button>
+            </div>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body" id="cbForm">
+            <form>
+              <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                      <label>Unit Name</label>
+                      <input class="form-control" formControlName="unit" id="UnitName"   type="text"   placeholder="Enter Unit name"/>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label>Unit Code</label>
+                      <input class="form-control" formControlName="unit" id="UnitCode"   type="text"   placeholder="Enter Unit Code"/>
+                    </div>
+                  </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label>Unit Type</label>
+                    <ng-select class="form-control select2bs4"
+                      formControlName="unitType" placeholder="Select Unit Type" required style="width: 100%"
+                      >
+                    </ng-select>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                      <label>Unit Level Type</label>
+                      <ng-select class="form-control select2bs4"
+                        formControlName="unitType" placeholder="Select Unit Level Type" required style="width: 100%"
+                        >
+                      </ng-select>
+                    </div>
+                  </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label>Brigade</label>
+                    <input class="form-control" formControlName="unit" id="Brigade"   type="text"   placeholder="Enter Brigade"/>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label>Address</label>
+                    <input class="form-control" formControlName="unit" id="address"   type="text"   placeholder="Enter Address"/>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label>District</label>
+                    <input class="form-control" formControlName="unit" id="district"   type="text"   placeholder="Enter District"/>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label>City</label>
+                    <input class="form-control" formControlName="unit" id="city"   type="text"   placeholder="Enter City"/>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label>State</label>
+                    <input class="form-control" formControlName="unit" id="state"   type="text"   placeholder="Enter State"/>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label>Pincode</label>
+                    <input class="form-control" formControlName="unit" id="pincode"   type="Number"   placeholder="Enter Pincode"/>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                    <label style="opacity: 0;">.</label><br>
+                    <button class="btn btn-primary" type="button">Submit</button>
+                  </div>
+                <!-- /.col -->
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.modal -->
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  
