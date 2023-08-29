@@ -150,6 +150,12 @@
             <p>User Registration</p>
           </a>
         </li>
+        <li class="nav-item" *ngIf=" userRole=='Unit Admin'">
+          <a href="#" class="nav-link" [routerLink]="['/user-profile']" [routerLinkActive]="['active']">
+            <i class="fas fa-file-alt nav-icon"></i>
+            <p>User Profile</p>
+          </a>
+        </li>
         <li class="nav-item" *ngIf="userRole=='CB Creator'">
           <a href="#" class="nav-link" [routerLink]="['/new-contigent-bill']" [routerLinkActive]="['active']">
             <i class="fas fa-file-alt nav-icon"></i>
