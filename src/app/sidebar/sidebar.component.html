@@ -138,6 +138,12 @@
             <p>Manage Unit Admin</p>
           </a>
         </li>
+        <li class="nav-item" *ngIf=" userRole=='Budget Manager'">
+          <a href="#" class="nav-link" [routerLink]="['/sanction']" [routerLinkActive]="['active']">
+            <i class="fas fa-file-alt nav-icon"></i>
+            <p>Sanction</p>
+          </a>
+        </li>
         <li class="nav-item" *ngIf=" userRole=='CB Creator'">
           <a href="#" class="nav-link" [routerLink]="['/new-contigent-bill']" [routerLinkActive]="['active']">
             <i class="fas fa-file-alt nav-icon"></i>
