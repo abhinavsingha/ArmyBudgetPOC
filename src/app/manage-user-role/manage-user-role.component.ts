@@ -54,22 +54,31 @@ export class ManageUserRoleComponent {
   searchText: any = '';
 
   formdata = new FormGroup({
+    password:new FormControl(),
+    dob:new FormControl(),
     unit: new FormControl(),
     pno: new FormControl(),
     role: new FormControl(),
     fromDate: new FormControl(),
     toDate: new FormControl(),
-    userName: new FormControl(),
+    username: new FormControl(),
     rank: new FormControl(),
+    gender:new FormControl,
+    Name:new FormControl,
+
   });
   currentUserUnit: any;
   userCurrentUnitName: any;
+  unitData: any;
   ngOnInit(): void {
     $.getScript('assets/js/adminlte.js');
     this.getAllUser();
     this.getAllRole();
     this.getCgUnitDataWithPurposeCode();
     this.getDashBoardDta();
+    this.getCgUnitData();
+    this.getGender();
+    this.getRank();
 
     this.currentUserUnit = localStorage.getItem('userCurrentUnit');
 
@@ -137,24 +146,24 @@ export class ManageUserRoleComponent {
 
   getUserInfo() {
 
-
-      this.apiService
-        .getApi('https://icg.net.in/cghrdata/getAllData/getAllUserInfo')
-        .subscribe((res) => {
-          this.SpinnerService.hide();
-          let result: { [key: string]: any } = res;
-          if (result['message'] == 'success') {
-            this.allUsers = [];
-            this.formdata.patchValue({
-              pno: undefined,
-              userName: undefined,
-              rank: undefined,
-            });
-            this.allUsers = result['response'];
-          } else {
-            this.common.faliureAlert('Please try later', result['message'], '');
-          }
-        });
+      //
+      // this.apiService
+      //   .getApi('https://icg.net.in/cghrdata/getAllData/getAllUserInfo')
+      //   .subscribe((res) => {
+      //     this.SpinnerService.hide();
+      //     let result: { [key: string]: any } = res;
+      //     if (result['message'] == 'success') {
+      //       this.allUsers = [];
+      //       this.formdata.patchValue({
+      //         pno: undefined,
+      //         userName: undefined,
+      //         rank: undefined,
+      //       });
+      //       this.allUsers = result['response'];
+      //     } else {
+      //       this.common.faliureAlert('Please try later', result['message'], '');
+      //     }
+      //   });
 
   }
 
@@ -192,21 +201,68 @@ export class ManageUserRoleComponent {
       isActive: 1,
     });
   }
-
+  getCgUnitData() {
+    this.SpinnerService.show();
+    var comboJson = null;
+    this.apiService.getApi(this.cons.api.getCgUnitData).subscribe(
+      (res) => {
+        this.SpinnerService.hide();
+        let result: { [key: string]: any } = res;
+        this.unitData = result['response'];
+      },
+      (error) => {
+        console.error(error);
+        this.SpinnerService.hide();
+      }
+    );
+  }
+  getGender() {
+    this.SpinnerService.show();
+    var comboJson = null;
+    this.apiService.getApi(this.cons.api.getAllGender).subscribe(
+      (res) => {
+        this.SpinnerService.hide();
+        let result: { [key: string]: any } = res;
+        this.genderData = result['response'];
+      },
+      (error) => {
+        console.error(error);
+        this.SpinnerService.hide();
+      }
+    );
+  }
+  getRank() {
+    this.SpinnerService.show();
+    var comboJson = null;
+    this.apiService.getApi(this.cons.api.getAllDesignation).subscribe(
+      (res) => {
+        this.SpinnerService.hide();
+        let result: { [key: string]: any } = res;
+        this.rankData = result['response'];
+      },
+      (error) => {
+        console.error(error);
+        this.SpinnerService.hide();
+      }
+    );
+  }
   saveUserData(formDataValue: any) {
     let submitJson = {
-      unitId: this.currentUserUnitNew,
-      unit: this.currentUserUnitNameNew,
-      pid: formDataValue.pno.pid,
-      pno: formDataValue.pno.pno,
-      fullName: formDataValue.pno.name,
-      rank: formDataValue.pno.rank,
-      userName: formDataValue.pno.userName,
+      unitId: formDataValue.unit.unit,
+      unit: formDataValue.unit.descr,
+      pid: formDataValue.pno,
+      pno: formDataValue.pno,
+      fullName: formDataValue.Name,
+      rankId: formDataValue.rank.roleId,
+      userName: formDataValue.username,
       roleId: formDataValue.role.roleId,
       fromDate: formDataValue.fromDate,
       toDate: formDataValue.toDate,
+      dob:formDataValue.dob,
+      password:formDataValue.password,
+      genderId:formDataValue.gender.genderId,
     };
-
+debugger;
     this.confirmModel(submitJson, formDataValue);
   }
 
@@ -301,6 +357,8 @@ export class ManageUserRoleComponent {
 
   currentUserUnitNew: any;
   currentUserUnitNameNew: any;
+  genderData: any;
+  rankData: any;
   getDashBoardDta() {
     this.SpinnerService.show();
     var newSubmitJson = null;
