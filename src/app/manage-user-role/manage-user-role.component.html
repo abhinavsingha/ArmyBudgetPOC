@@ -40,13 +40,19 @@
 <!--                                    <ng-select class="form-control select2bs4" style="width: 100%" [disabled]="true"-->
 <!--                                        [items]="allUsers" bindLabel="pno" appendTo="body" placeholder="Select CG P.No."-->
 <!--                                        (change)="setOtherValues($event)" formControlName="pno"></ng-select>-->
-                                  <input type="text" class="form-control" id="username"/>
+                                  <input type="text" class="form-control" formControlName="pno" id="username"/>
                                 </div>
                             </div>
+                          <div class="col-md-4">
+                            <div class="form-group">
+                              <label>Name</label>
+                              <input type="text" formControlName="Name" class="form-control" id="fundAvailable"/>
+                            </div>
+                          </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>User Name</label>
-                                    <input type="text" class="form-control" id="fundAvailable"/>
+                                    <input type="text" class="form-control" formControlName="username" id="fundAvailable"/>
                                 </div>
                             </div>
                           <div class="col-md-4">
@@ -60,12 +66,36 @@
 <!--                              </div>-->
 <!--                            </div>-->
                           </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>Rank</label>
-                                    <input type="text" class="form-control" id="rank" />
-                                </div>
+                          <div class="col-md-4">
+                            <div class="form-group">
+                              <label>Rank</label>
+                              <ng-select [items]="rankData" bindLabel="roleName" class="form-control select2bs4"
+                                         formControlName="rank" placeholder="Select Unit" required style="width: 100%">
+                              </ng-select>
                             </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="form-group">
+                              <label>Gender</label>
+                              <ng-select [items]="genderData" bindLabel="genderName" class="form-control select2bs4"
+                                         formControlName="gender" placeholder="Select Unit" required style="width: 100%">
+                              </ng-select>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="form-group">
+                              <label>Date of Birth</label>
+                              <input type="date" class="form-control" formControlName="dob" id="rank" />
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="form-group">
+                              <label>Unit</label>
+                              <ng-select [items]="unitData" bindLabel="descr" class="form-control select2bs4"
+                                         formControlName="unit" placeholder="Select Unit" required style="width: 100%">
+                              </ng-select>
+                            </div>
+                          </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Role</label>

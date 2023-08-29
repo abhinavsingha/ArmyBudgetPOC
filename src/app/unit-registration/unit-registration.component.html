@@ -35,18 +35,18 @@
           </div>
           <!-- /.card-header -->
           <div class="card-body" id="cbForm">
-            <form>
+            <form (ngSubmit)="submitList(formdata.value)">
               <div class="row">
                 <div class="col-md-3">
                     <div class="form-group">
                       <label>User Name</label>
-                      <input class="form-control" formControlName="User" id="UserName"   type="text"   placeholder="Enter User name"/>
+                      <input class="form-control" formControlName="UserName" id="UserName"   type="text"   placeholder="Enter User name"/>
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
                       <label>User Code</label>
-                      <input class="form-control" formControlName="User" id="UserCode"   type="text"   placeholder="Enter User Code"/>
+                      <input class="form-control" formControlName="UserCode" id="UserCode"   type="text"   placeholder="Enter User Code"/>
                     </div>
                   </div>
                 <div class="col-md-3">
@@ -62,7 +62,7 @@
                     <div class="form-group">
                       <label>User Level Type</label>
                       <ng-select class="form-control select2bs4"
-                        formControlName="UserType" placeholder="Select User Level Type" required style="width: 100%"
+                        formControlName="UserTypeLevel" placeholder="Select User Level Type" required style="width: 100%"
                         >
                       </ng-select>
                     </div>
@@ -70,37 +70,37 @@
                 <div class="col-md-3">
                   <div class="form-group">
                     <label>Brigade</label>
-                    <input class="form-control" formControlName="User" id="Brigade"   type="text"   placeholder="Enter Brigade"/>
+                    <input class="form-control" formControlName="Brigade" id="Brigade"   type="text"   placeholder="Enter Brigade"/>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
                     <label>Address</label>
-                    <input class="form-control" formControlName="User" id="address"   type="text"   placeholder="Enter Address"/>
+                    <input class="form-control" formControlName="address" id="address"   type="text"   placeholder="Enter Address"/>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
                     <label>District</label>
-                    <input class="form-control" formControlName="User" id="district"   type="text"   placeholder="Enter District"/>
+                    <input class="form-control" formControlName="district" id="district"   type="text"   placeholder="Enter District"/>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
                     <label>City</label>
-                    <input class="form-control" formControlName="User" id="city"   type="text"   placeholder="Enter City"/>
+                    <input class="form-control" formControlName="city" id="city"   type="text"   placeholder="Enter City"/>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
                     <label>State</label>
-                    <input class="form-control" formControlName="User" id="state"   type="text"   placeholder="Enter State"/>
+                    <input class="form-control" formControlName="state" id="state"   type="text"   placeholder="Enter State"/>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
                     <label>Pincode</label>
-                    <input class="form-control" formControlName="User" id="pincode"   type="Number"   placeholder="Enter Pincode"/>
+                    <input class="form-control" formControlName="pincode" id="pincode"   type="Number"   placeholder="Enter Pincode"/>
                   </div>
                 </div>
                 <div class="col-md-3">
@@ -119,4 +119,3 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  

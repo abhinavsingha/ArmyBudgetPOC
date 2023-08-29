@@ -11,7 +11,7 @@ export class ConstantsService {
   // serviceUrl = 'https://icg.net.in/cgbudget/'; //UAT server
   // serviceUrl = 'http://172.20.10.05:1111/';
   // serviceUrl = 'http://192.168.43.153:1111/';
-  //  serviceUrl = 'http://:192.168.100.201/erp/';
+  //  serviceUrl = 'http://:192.168.100.201:8080/erp/';
   serviceUrl = 'http://192.168.100.122:1111/';
   api = {
     getDataBudgetAllocation:
@@ -259,7 +259,9 @@ export class ConstantsService {
     getIsShipCgUnit: this.serviceUrl+'unitRebaseController/getIsShipCgUnit',
     loginWebApi: this.serviceUrl+'/user/loginWebApi',
     createSO: this.serviceUrl+'sectionOrder/createSO',
-    getSoMaster: this.serviceUrl+'sectionOrder/getSoMaster'
+    getSoMaster: this.serviceUrl+'sectionOrder/getSoMaster',
+    getAllGender: this.serviceUrl+'mangeUser/getAllGender',
+    getAllDesignation: this.serviceUrl+'mangeUser/getAllDesignation'
 
 
   };
