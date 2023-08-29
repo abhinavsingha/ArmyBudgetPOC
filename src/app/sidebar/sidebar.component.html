@@ -15,7 +15,7 @@
         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
         <li class="nav-item"
-          *ngIf="userRole=='Budget Manager' || userRole=='Budget Approver'|| userRole=='CB Verifier'|| userRole=='CB Creator'|| userRole=='CB Approver'|| userRole=='Viewer' || userRole=='System Admin' || userRole=='Unit Admin'">
+          *ngIf="userRole=='Budget Manager' || userRole=='Budget Approver'|| userRole=='SO Verifier'||userRole=='CB Verifier'|| userRole=='SO Creator'||userRole=='CB Creator'|| userRole=='SO Approver'||userRole=='CB Approver'|| userRole=='Viewer' || userRole=='System Admin' || userRole=='Unit Admin'">
           <a href="#" class="nav-link" [routerLink]="['/dashboard']" [routerLinkActive]="['active']">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
@@ -25,7 +25,7 @@
         </li>
         <!-- <li class="nav-item"> -->
         <li class="nav-item"
-          *ngIf="userRole=='Budget Manager' || userRole=='Budget Approver'|| userRole=='CB Verifier'|| userRole=='CB Creator'|| userRole=='CB Approver'">
+          *ngIf="userRole=='Budget Manager' || userRole=='Budget Approver'|| userRole=='SO Verifier'||userRole=='CB Verifier'|| userRole=='SO Creator'||userRole=='CB Creator'|| userRole=='SO Approver'||userRole=='CB Approver'">
           <a href="#" class="nav-link" [routerLink]="['/inbox']" [routerLinkActive]="['active']">
             <i class="fas fa-inbox nav-icon"></i>
             <p>Inbox<span *ngIf="sharedService.inbox !== '0'&&sharedService.inbox !== undefined"
@@ -36,7 +36,7 @@
           </a>
         </li>
         <li class="nav-item"
-          *ngIf="userRole=='Budget Manager' || userRole=='Budget Approver'|| userRole=='CB Verifier'|| userRole=='CB Creator'|| userRole=='CB Approver'">
+          *ngIf="userRole=='Budget Manager' || userRole=='Budget Approver'|| userRole=='SO Verifier'||userRole=='CB Verifier'|| userRole=='SO Creator'||userRole=='CB Creator'|| userRole=='SO Approver'||userRole=='CB Approver'">
           <a href="#" class="nav-link" [routerLink]="['/outbox']" [routerLinkActive]="['active']">
             <i class="fas fa-paper-plane nav-icon"></i>
             <p>Outbox<span *ngIf="sharedService.outbox !== '0'&&sharedService.outbox !== undefined"
@@ -47,7 +47,7 @@
           </a>
         </li>
         <li class="nav-item"
-          *ngIf="userRole=='Budget Manager' || userRole=='Budget Approver'|| userRole=='CB Verifier'|| userRole=='CB Creator'|| userRole=='CB Approver'">
+          *ngIf="userRole=='Budget Manager' || userRole=='Budget Approver'|| userRole=='SO Verifier'||userRole=='CB Verifier'|| userRole=='SO Creator'||userRole=='CB Creator'|| userRole=='SO Approver'||userRole=='CB Approver'">
           <a href="#" class="nav-link" [routerLink]="['/approved']" [routerLinkActive]="['active']">
             <i class="fas fa-clipboard-check nav-icon"></i>
             <p>Approved
@@ -59,7 +59,7 @@
           </a>
         </li>
         <li class="nav-item"
-          *ngIf="userRole=='Budget Manager' || userRole=='Budget Approver'|| userRole=='CB Verifier'|| userRole=='CB Creator'|| userRole=='CB Approver'">
+          *ngIf="userRole=='Budget Manager' || userRole=='Budget Approver'|| userRole=='SO Verifier'||userRole=='CB Verifier'|| userRole=='SO Creator'||userRole=='CB Creator'|| userRole=='SO Approver'||userRole=='CB Approver'">
           <a href="#" class="nav-link" [routerLink]="['/archive']" [routerLinkActive]="['active']">
             <i class="fas fa-archive nav-icon"></i>
             <p>Archive
@@ -138,28 +138,28 @@
             <p>Manage Unit Admin</p>
           </a>
         </li>
-        <li class="nav-item" *ngIf=" userRole=='Budget Manager'">
-          <a href="#" class="nav-link" [routerLink]="['/sanction']" [routerLinkActive]="['active']">
-            <i class="fas fa-file-alt nav-icon"></i>
-            <p>Sanction</p>
-          </a>
-        </li>
-        <li class="nav-item" *ngIf=" userRole=='Budget Manager'">
+        <li class="nav-item" *ngIf=" userRole=='System Admin'">
           <a href="#" class="nav-link" [routerLink]="['/unit-registration']" [routerLinkActive]="['active']">
             <i class="fas fa-file-alt nav-icon"></i>
             <p>Unit Registration</p>
           </a>
         </li>
-        <li class="nav-item" *ngIf=" userRole=='Budget Manager'">
+        <li class="nav-item" *ngIf=" userRole=='Unit Admin'">
           <a href="#" class="nav-link" [routerLink]="['/user-registration']" [routerLinkActive]="['active']">
             <i class="fas fa-file-alt nav-icon"></i>
             <p>User Registration</p>
           </a>
         </li>
-        <li class="nav-item" *ngIf=" userRole=='CB Creator'">
+        <li class="nav-item" *ngIf="userRole=='CB Creator'">
           <a href="#" class="nav-link" [routerLink]="['/new-contigent-bill']" [routerLinkActive]="['active']">
             <i class="fas fa-file-alt nav-icon"></i>
             <p>New Contingent Bill</p>
+          </a>
+        </li>
+        <li class="nav-item" *ngIf=" userRole=='SO Creator'">
+          <a href="#" class="nav-link" [routerLink]="['/sanction']" [routerLinkActive]="['active']">
+            <i class="fas fa-file-alt nav-icon"></i>
+            <p>New Sanction Order</p>
           </a>
         </li>
 
@@ -192,7 +192,7 @@
 
           </ul>
         </li>
-        <!--        <li class="nav-item" *ngIf=" userRole=='CB Creator'">-->
+        <!--        <li class="nav-item" *ngIf=" userRole==SO Creator'">-->
         <!--          <a href="#" class="nav-link" [routerLink]="['/cb-verification']" [routerLinkActive]="['active']">-->
         <!--            <i class="fas fa-file-alt nav-icon"></i>-->
         <!--            <p>CB Verification</p>-->
@@ -200,9 +200,9 @@
         <!--        </li>-->
 
         <!-- <li class="nav-item"
-          *ngIf="userRole=='Budget Manager' || userRole=='Budget Approver'|| userRole=='CB Creator'|| userRole=='CB Approver' || userRole=='Viewer'"> -->
+          *ngIf="userRole=='Budget Manager' || userRole=='Budget Approver'|| userRole==SO Creator'|| userRole=='SO Approver'||userRole=='CB Approver' || userRole=='Viewer'"> -->
 
-        <!-- <li class="nav-item " *ngIf="userRole=='Budget Manager' || userRole=='CB Creator'">
+        <!-- <li class="nav-item " *ngIf="userRole=='Budget Manager' || userRole==SO Creator'">
           <a href="#" class="nav-link" [routerLink]="['/cda-parking']" [routerLinkActive]="['active']">
             <i class="fas fa-coins nav-icon"></i>
             <p>CDA Parking</p>

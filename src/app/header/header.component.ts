@@ -177,7 +177,8 @@ export class HeaderComponent {
             this.roleHeading = result['response'].userDetails.role[0].roleName;
             this.sharedService.roleHeading = this.roleHeading;
             this.unitName = result['response'].userDetails.unit;
-            this.rank = result['response'].userDetails.rank;
+            this.rank = result['response'].userDetails.rankId.roleName;
+            debugger;
             this.sharedService.inbox=result['response'].inbox;
             this.sharedService.outbox=result['response'].outbox;
             this.sharedService.archive=result['response'].archive;
