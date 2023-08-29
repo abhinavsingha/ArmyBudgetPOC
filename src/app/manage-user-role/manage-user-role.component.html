@@ -37,23 +37,33 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>CG P.No.</label>
-                                    <ng-select class="form-control select2bs4" style="width: 100%" [disabled]="true"
-                                        [items]="allUsers" bindLabel="pno" appendTo="body" placeholder="Select CG P.No."
-                                        (change)="setOtherValues($event)" formControlName="pno"></ng-select>
+<!--                                    <ng-select class="form-control select2bs4" style="width: 100%" [disabled]="true"-->
+<!--                                        [items]="allUsers" bindLabel="pno" appendTo="body" placeholder="Select CG P.No."-->
+<!--                                        (change)="setOtherValues($event)" formControlName="pno"></ng-select>-->
+                                  <input type="text" class="form-control" id="username"/>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>User Name</label>
-                                    <input type="text" class="form-control" id="fundAvailable" value="{{userName}}"
-                                        formControlName="userName" readonly />
+                                    <input type="text" class="form-control" id="fundAvailable"/>
                                 </div>
                             </div>
+                          <div class="col-md-4">
+                            <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" placeholder="Password" formControlName="password">
+                            </div>
+<!--                              <div class="input-group-append">-->
+<!--                              <div class="input-group-text">-->
+<!--                                <span class="fas fa-lock"></span>-->
+<!--                              </div>-->
+<!--                            </div>-->
+                          </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Rank</label>
-                                    <input type="text" class="form-control" id="rank" value="{{rank}}"
-                                        formControlName="rank" readonly />
+                                    <input type="text" class="form-control" id="rank" />
                                 </div>
                             </div>
                             <div class="col-md-4">

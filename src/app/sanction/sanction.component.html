@@ -1,0 +1,162 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Sanction</h1>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Sanction</a></li>
+          </ol>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="card card-default">
+        <div class="card-header">
+          <h3 class="card-title">Sanction</h3>
+          <div class="card-tools">
+            <button class="btn btn-tool" data-card-widget="collapse" type="button">
+              <i class="fas fa-minus"></i>
+            </button>
+          </div>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body" id="cbForm">
+          <form (ngSubmit)="submitList()" [formGroup]="formdata">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Financial Year</label>
+                  <ng-select [items]="finYearData" bindLabel="finYear" class="form-control select2bs4"
+                    formControlName="finYearName" placeholder="Select Financial Year" required style="width: 100%"
+                    (change)="cleardata(0)">
+                  </ng-select>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Sanction Number</label>
+                  <input class="form-control" formControlName="unit" id="sanction"   type="text"   />
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Sanction Name</label>
+                  <input class="form-control" formControlName="unit" id="sanction"   type="text"   />
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Santion Date</label>
+                  <input class="form-control" formControlName="cbDate" id="cbDate" placeholder="Enter Date" type="date"
+                         (change)="checkDate(formdata.value,'cbDate','CB Date')" (change)="fiscalCheckDate(formdata,'cbDate')"/>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Sanction Type</label>
+                  <ng-select [(ngModel)]="subHead" [items]="subHeadData" bindLabel="subHeadDescr"
+                    class="form-control select2bs4" formControlName="subHead" name="subHead"
+                    placeholder="Select Sub Head" (change)="getAvailableFundData()"
+                             (change)="getSanctionNumber(formdata.value)"
+                    style="width: 100%">
+                  </ng-select>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Sanction Amount</label>
+                  <input class="form-control" formControlName="unit" id="sanction"   type="Number"   />
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Firm Name</label>
+                  <input class="form-control" formControlName="unit" id="sanction"   type="Number"   />
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Work Order Number</label>
+                  <input class="form-control" formControlName="unit" id="sanction"   type="Number"   />
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Invoice Number</label>
+                  <input class="form-control" formControlName="unit" id="sanction"   type="Number"   />
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Invoice Date</label>
+                  <input class="form-control" formControlName="unit" id="sanction"   type="Date"   />
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="invoice">Authority Upload</label>
+                  <div class="input-group">
+                    <div class="custom-file">
+                      <input #invoiceFileInput class="custom-file-input" formControlName="file" id="invoice"
+                             type="file">
+                      <label class="custom-file-label" for="invoice" id="invoice2">Choose file</label>
+                    </div>
+                    <div class="input-group-append">
+                      <span (click)="upload('invoice')" class="input-group-text" style="cursor: pointer">Upload</span>
+                    </div>
+
+                    <div class="input-group-append" *ngIf="invoice!=undefined">
+                      <span class="input-group-text" (click)="viewFile(invoice)">View</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Sanction Detail</label>
+                  <textarea class="form-control" formControlName="onAccOf" id="onAccOf"
+                    placeholder="Sanction Detail"
+                    type="text"></textarea>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Authority Details</label>
+                  <textarea class="form-control" formControlName="authDetail" id="authDetail"
+                    placeholder="S1.10.1 of Shedule-10 of DFPCG-2017 vide Govt. of India, Ministry of Defence letter No. PF/0104/CGHQ/2017/D (CG) dated 04 Jul 2017"
+                    type="text"></textarea>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <label style="opacity: 0;">.</label><br>
+                <button *ngIf="showSave" (click)="addToList()" class="btn btn-primary" type="button">Save CB</button>
+                <!--                <button type="submit" class="btn btn-primary" (click)="dummydata()"></button>-->
+              </div>
+              <!-- /.col -->
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- /.container-fluid -->
+  </section>
+  <!-- /.modal -->
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

@@ -291,6 +291,7 @@ export class BudgetAllocationComponent implements OnInit {
 
   items!: FormArray;
   formdata = new FormGroup({
+    allocationMeans:new FormControl(),
     finYearName: new FormControl(), //
     subHead: new FormControl(), //
     unit: new FormControl(), //
@@ -553,6 +554,7 @@ export class BudgetAllocationComponent implements OnInit {
         allocationTypeId: this.tableData[i].allocationType.allocTypeId,
         amountTypeId: this.formdata.get('amountType')?.value.amountTypeId,
         cdaParkingId: cda,
+        isCash:this.formdata.get('allocationMeans')?.value.value
       });
     }
     this.submitJson = {
@@ -1183,6 +1185,8 @@ export class BudgetAllocationComponent implements OnInit {
     // console.log(subHeadData);
   }
   cdaAllocationbalance: boolean = false;
+  allocationMeans: any[] = [{key:'Cash',value:1},
+                            {key:'Not Cash',value:0}];
   cdaWithdrawl(cda: any) {
     debugger;
     cda.amount=cda.amount.toFixed(4);

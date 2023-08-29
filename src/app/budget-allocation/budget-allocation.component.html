@@ -68,6 +68,8 @@
                       </ng-select>
                     </div>
                   </div>
+
+
                   <div class="col-md-8">
                     <div class="form-group">
                       <label>Subhead Type</label>
@@ -109,6 +111,15 @@
                       <label>Remarks</label>
                       <input class="form-control" formControlName="remarks" id="PrevAllocation" placeholder="Enter Remarks"
                              type="text"/>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label>Allocation Means</label>
+                      <ng-select [items]="allocationMeans" bindLabel="key"
+                                 class="form-control select2bs4" formControlName="allocationMeans" placeholder="Select Allocation Means"
+                                 style="width: 100%">
+                      </ng-select>
                     </div>
                   </div>
                   <div class="col-md-4">

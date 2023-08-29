@@ -49,6 +49,7 @@ import { AllAllocationComponent } from './all-allocation/all-allocation.componen
 import { ArchiveComponent } from './archive/archive.component';
 import { FilterPipe } from './filter.pipe';
 import {ApprovedRebaseComponent} from "./approved-rebase/approved-rebase.component";
+import {SanctionComponent} from "./sanction/sanction.component";
 // import {ViewFormComponent} from "./view-form/view-form.component";
 
 // import { DialogComponent } from './dialog/dialog.component';
@@ -98,6 +99,7 @@ import {ApprovedRebaseComponent} from "./approved-rebase/approved-rebase.compone
     ApprovedRebaseComponent,
     HeaderComponent,
     SidebarComponent,
+    SanctionComponent,
     DashboardComponent,
     BudgetAllocationComponent,
     BudgetUpdateComponent,

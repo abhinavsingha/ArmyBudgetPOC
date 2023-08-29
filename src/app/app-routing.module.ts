@@ -27,6 +27,7 @@ import { ArchiveComponent } from './archive/archive.component';
 import { AllAllocationComponent } from './all-allocation/all-allocation.component';
 import { UnitRebaseReportComponent } from './unit-rebase-report/unit-rebase-report.component';
 import {ApprovedRebaseComponent} from "./approved-rebase/approved-rebase.component";
+import {SanctionComponent} from "./sanction/sanction.component";
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -38,6 +39,7 @@ const routes: Routes = [
   { path: 'outbox', component: OutboxComponent },
   { path: 'budget-approval', component: BudgetApproverComponent },
   { path: 'new-contigent-bill', component: NewContigentBillComponent },
+  { path: 'sanction', component: SanctionComponent },
   { path: 'manage-users', component: ManageUserComponent },
   { path: 'approved', component: ApprovedComponent },
   {
