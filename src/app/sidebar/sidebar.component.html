@@ -156,12 +156,7 @@
             <p>User Profile</p>
           </a>
         </li>
-        <li class="nav-item" *ngIf=" userRole=='Budget Manager'">
-          <a href="#" class="nav-link" [routerLink]="['/budget-estimation']" [routerLinkActive]="['active']">
-            <i class="fas fa-file-alt nav-icon"></i>
-            <p>Budget Estimation</p>
-          </a>
-        </li>
+
         <li class="nav-item" *ngIf="userRole=='CB Creator'">
           <a href="#" class="nav-link" [routerLink]="['/new-contigent-bill']" [routerLinkActive]="['active']">
             <i class="fas fa-file-alt nav-icon"></i>
