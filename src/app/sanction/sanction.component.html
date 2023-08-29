@@ -59,6 +59,14 @@
               </div>
               <div class="col-md-3">
                 <div class="form-group">
+                  <label>Sanction Unit</label>
+                  <ng-select [items]="unitData" bindLabel="descr" class="form-control select2bs4"
+                             formControlName="unit" placeholder="Select Unit" required style="width: 100%">
+                  </ng-select>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
                   <label>Santion Date</label>
                   <input class="form-control" formControlName="sanctionDate" id="sanctionDate" placeholder="Enter Date" type="date"/>
                 </div>
@@ -67,7 +75,7 @@
               <div class="col-md-3">
                 <div class="form-group">
                   <label>Sanction Type</label>
-                  <ng-select [(ngModel)]="sanctionType" [items]="sanctionTypes" bindLabel="value"
+                  <ng-select [items]="sanctionTypes" bindLabel="soName"
                     class="form-control select2bs4" formControlName="sanctionType" name="subHead"
                     placeholder="Select Sanction Type"
                     style="width: 100%">
@@ -142,7 +150,7 @@
               </div>
               <div class="col-md-3">
                 <label style="opacity: 0;">.</label><br>
-                <button class="btn btn-primary" type="button">Submit</button>
+                <button class="btn btn-primary" type="submit">Submit</button>
               </div>
               <!-- /.col -->
             </div>

@@ -11,7 +11,7 @@ export class ConstantsService {
   // serviceUrl = 'https://icg.net.in/cgbudget/'; //UAT server
   // serviceUrl = 'http://172.20.10.05:1111/';
   // serviceUrl = 'http://192.168.43.153:1111/';
-  //  serviceUrl = 'http://:1111/';
+  //  serviceUrl = 'http://:192.168.100.201/erp/';
   serviceUrl = 'http://192.168.100.122:1111/';
   api = {
     getDataBudgetAllocation:
@@ -257,7 +257,9 @@ export class ConstantsService {
     getOldCdaDataForRebase: this.serviceUrl+'cdaParkingController/getOldCdaDataForRebase',
     getAllSubHeadList: this.serviceUrl+'budgetAllocation/getAllSubHeadList',
     getIsShipCgUnit: this.serviceUrl+'unitRebaseController/getIsShipCgUnit',
-    loginWebApi: this.serviceUrl+'/user/loginWebApi'
+    loginWebApi: this.serviceUrl+'/user/loginWebApi',
+    createSO: this.serviceUrl+'sectionOrder/createSO',
+    getSoMaster: this.serviceUrl+'sectionOrder/getSoMaster'
 
 
   };
