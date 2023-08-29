@@ -29,6 +29,7 @@ import { UnitRebaseReportComponent } from './unit-rebase-report/unit-rebase-repo
 import {ApprovedRebaseComponent} from "./approved-rebase/approved-rebase.component";
 import {SanctionComponent} from "./sanction/sanction.component";
 import { UnitRegistrationComponent } from './unit-registration/unit-registration.component';
+import { UserRegistrationComponent } from './user-registration/user-registration.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -42,6 +43,8 @@ const routes: Routes = [
   { path: 'new-contigent-bill', component: NewContigentBillComponent },
   { path: 'sanction', component: SanctionComponent },
   { path: 'unit-registration', component: UnitRegistrationComponent },
+  { path: 'user-registration', component: UserRegistrationComponent },
+
   { path: 'manage-users', component: ManageUserComponent },
   { path: 'approved', component: ApprovedComponent },
   {

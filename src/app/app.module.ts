@@ -51,6 +51,7 @@ import { FilterPipe } from './filter.pipe';
 import {ApprovedRebaseComponent} from "./approved-rebase/approved-rebase.component";
 import {SanctionComponent} from "./sanction/sanction.component";
 import { UnitRegistrationComponent } from './unit-registration/unit-registration.component';
+import { UserRegistrationComponent } from './user-registration/user-registration.component';
 // import {ViewFormComponent} from "./view-form/view-form.component";
 
 // import { DialogComponent } from './dialog/dialog.component';
@@ -130,6 +131,7 @@ import { UnitRegistrationComponent } from './unit-registration/unit-registration
     UnitRebaseReportComponent,
     FilterPipe,
     UnitRegistrationComponent,
+    UserRegistrationComponent,
 
     // ViewFormComponent
     // DialogComponent,
