@@ -30,6 +30,7 @@ import {ApprovedRebaseComponent} from "./approved-rebase/approved-rebase.compone
 import {SanctionComponent} from "./sanction/sanction.component";
 import { UnitRegistrationComponent } from './unit-registration/unit-registration.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -44,6 +45,8 @@ const routes: Routes = [
   { path: 'sanction', component: SanctionComponent },
   { path: 'unit-registration', component: UnitRegistrationComponent },
   { path: 'user-registration', component: UserRegistrationComponent },
+  { path: 'user-profile', component: UserProfileComponent },
+
 
   { path: 'manage-users', component: ManageUserComponent },
   { path: 'approved', component: ApprovedComponent },
